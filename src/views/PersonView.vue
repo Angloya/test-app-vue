@@ -28,7 +28,7 @@ export default {
   computed: {
     person () {
       let personId = this.$route.params.personId
-      return this.$store.state.persons && this.$store.getters.getPerson(personId)
+      return this.$store.getters.getPerson(personId)
     }
   },
   methods: {

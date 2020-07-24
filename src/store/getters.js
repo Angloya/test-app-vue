@@ -10,6 +10,6 @@ export default {
     return rightSidePersons.filter(person => person.name.toLowerCase().includes(value.toLowerCase()))
   },
   getPerson: state => value => {
-    return state.persons.find(person => person.id === value)
+    return state.persons && state.persons.find(person => person.id === value)
   }
 }

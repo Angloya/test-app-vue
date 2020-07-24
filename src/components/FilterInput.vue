@@ -1,7 +1,12 @@
 <template>
   <div class="filter-input">
     <div class="filter-input__body">
-      <input type="text" v-model="value" @input="onInputChange(value)" :placeholder="`Введите имя`" class="title__text" />
+      <input
+        type="text"
+        :value="value"
+        @input="onInputChange($event)"
+        placeholder="Введите имя"
+        class="title__text" />
     </div>
   </div>
 </template>
@@ -17,10 +22,10 @@ export default {
     }
   },
   methods: {
-    onInputChange(value) {
+    onInputChange(e) {
       clearTimeout(this.timeout)
       this.timeout = setTimeout(() => {
-        this.$emit('change', value)
+        this.$emit('change', e.target.value)
       }, this.delay)
     }
   }
